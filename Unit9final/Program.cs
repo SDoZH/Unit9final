@@ -9,22 +9,33 @@ namespace Task1
         {
             try
             {
-                Student student = new Student { Name = "Tom", Age = 18, Phone = "+79251231212" };
+                Student student = new Student { Name = "Tomgfhhdhsss", Age = 18, Phone = "+79251231212" };
+                Exception[] exceptions = new Exception[5];
+                exceptions[0] = new NaneException("Длина имени меньше 2 символов"); ;
+                exceptions[1] = new AgeMin("Лицам до 18 регистрация запрещена");
+                exceptions[2] = new AgeMax("Ты слишком старый");
+                exceptions[3] = new PhoneEX("Не корректный номер");
+                exceptions[4] = new MyExeptions1("Слишком длинное имя");
+
                 if (student.Name == null || student.Name.Length < 2)
                 {
-                    throw new NaneException("Длина имени меньше 2 символов");
+                    throw exceptions[0];
                 }
                 if (student.Age < 18)
                 {
-                    throw new AgeMin("Лицам до 18 регистрация запрещена");
+                    throw exceptions[1];
                 }
                 if (student.Age > 23)
                 {
-                    throw new AgeMax("Ты слишком старый");
+                    throw exceptions[2];
                 }
                 if (student.Phone == null || student.Phone.Length != 12)
                 {
-                    throw new PhoneEX("Не корректный номер");
+                    throw exceptions[3];
+                }
+                if (student.Name.Length > 10)
+                {
+                    throw exceptions[4];
                 }
                 Console.WriteLine("Добро пожаловать {0}", (student.Name));
             }
@@ -63,6 +74,7 @@ namespace Task1
             public string Phone { get; set; }
         }
     }
+
 }
 
 

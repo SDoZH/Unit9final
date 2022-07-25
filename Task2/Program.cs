@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using Task2;
 
 namespace Task2
 {
@@ -7,26 +9,31 @@ namespace Task2
     {
         public static void Main(string[] args)
         {
-            List<string> firstName = new List<string>
-            {
-                "Сидоров",
-                "Петров",
-                "Антонов",
-                "Григорьев",
-                "Петухов",
-                "Иванов"
-            };
+            Event sorting = new Event();
+            sorting.Dfirstnameevent += sorting.Sorted;
 
-            firstName.Sort();
+            while (true)
 
-            foreach (string str in firstName)
-                Console.WriteLine(str);
+                try
+                {
+                    Console.WriteLine("Выберите как отсортивать список фамилий" +
+                      "\n1 - от А - Я" +
+                      "\n2 - от Я - А");
+                    string number = Console.ReadLine();
+                    sorting.DoEvent(number);
+                }
+                catch (MyExeptions e)
+                {
 
-            Console.ReadLine();
+                    Console.WriteLine(e.Message);
+                }
+
         }
-    }
-    public class FirstNameList
-    {
-        public string FirstName { get; set; } = "";
+
     }
 }
+
+
+
+
+

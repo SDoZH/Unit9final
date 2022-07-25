@@ -28,5 +28,17 @@ namespace Task1
             : base(message)
         { }
     }
+    public class MyExeptions1 : ApplicationException
+    {
+        public MyExeptions1(string message)
+            : base(message)
+        { }
+    }
 }
+
+
+       
+    
+
+
 
