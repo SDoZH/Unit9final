@@ -17,8 +17,7 @@ namespace Task2
                 try
                 {
                     Console.WriteLine("Выберите как отсортивать список фамилий" +
-                      "\n1 - от А - Я" +
-                      "\n2 - от Я - А");
+                      "\n1 - от А - Я" +"\n2 - от Я - А");
                     string number = Console.ReadLine();
                     sorting.DoEvent(number);
                 }
