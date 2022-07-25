@@ -1,12 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Task2
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<string> firstName = new List<string>
+            {
+                "Сидоров",
+                "Петров",
+                "Антонов",
+                "Григорьев",
+                "Петухов",
+                "Иванов"
+            };
+
+            firstName.Sort();
+
+            foreach (string str in firstName)
+                Console.WriteLine(str);
+
+            Console.ReadLine();
         }
+    }
+    public class FirstNameList
+    {
+        public string FirstName { get; set; } = "";
     }
 }
