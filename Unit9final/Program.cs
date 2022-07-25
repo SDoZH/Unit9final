@@ -57,7 +57,7 @@ namespace Task1
             {
                 Console.WriteLine(ex.Message);
             }
-            catch (NotSupportedException ex)
+            catch (MyExeptions1 ex)
             {
                 Console.WriteLine(ex.Message);
             }
