@@ -1,8 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Collections;
-using Task1;
-using System.Text.RegularExpressions;
+
 
 namespace Task1
 {
@@ -12,7 +9,7 @@ namespace Task1
         {
             try
             {
-                Student student = new Student { Name = "Tom", Age = 18, Phone = "+7921231212" };
+                Student student = new Student { Name = "Tom", Age = 18, Phone = "+79251231212" };
                 if (student.Name == null || student.Name.Length < 2)
                 {
                     throw new NaneException("Длина имени меньше 2 символов");
@@ -49,7 +46,7 @@ namespace Task1
             {
                 Console.WriteLine(ex.Message);
             }
-            catch(NotSupportedException ex)
+            catch (NotSupportedException ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -58,8 +55,6 @@ namespace Task1
                 Console.WriteLine("Конец");
             }
         }
-
-
         public class Student
         {
 
